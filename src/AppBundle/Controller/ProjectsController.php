@@ -15,9 +15,7 @@ class ProjectsController extends Controller
 	public function indexAction()
 	{
 		$project = new Project;
-		$project->setName("Immeuble floral");
-		$project->setDescription("Quand la ville arbore son manteau automnal");
-		$project->setTargetAmount(0);
+		$project->setName("Immeuble floral")->setDescription("Quand la ville arbore son manteau automnal")->setTargetAmount(0);
 
 		$em = $this->getDoctrine()->getManager();
 
