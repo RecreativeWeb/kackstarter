@@ -14,20 +14,10 @@ class ProjectsController extends Controller
 	 */
 	public function indexAction()
 	{
-		$project = new Project;
-		$project->setName("Immeuble floral")->setDescription("Quand la ville arbore son manteau automnal")->setTargetAmount(0);
-
 		$em = $this->getDoctrine()->getManager();
 
-		$em->persist($project);
-		$em->flush();
+		$projects = $em->getRepository(Project::class)->findAll();
 
-		return new Response('<h1>Project created!</h1>');
-
-		//$projects = ['Cinema ambulant','Theatre de rue','Origami d\'été','Papillote géante','Immeuble floral'];
-
-		//return $this->render('projects/index.html.twig',[
-		//	"projets" => $projects
-		//]);
+		return $this->render('projects/index.html.twig',compact('projects'));
 	}
 }

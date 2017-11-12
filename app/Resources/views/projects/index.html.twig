@@ -6,11 +6,13 @@
 </head>
 <body>
 	
-<h1>{{ projets | length}} Projects</h1>
+<h1>{{ projects | length}} Projects</h1>
 
 <ul>
-	{% for e in projets %}
-	<li>{{ e }}</li>
+	{% for e in projects %}
+	<li>
+		<strong>{{ e.name }} </strong>for <em>{{ e.description }}</em>: $ {{ e.TargetAmount }}
+	</li>
 	{% endfor %}
 </ul>
 	
