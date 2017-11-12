@@ -38,7 +38,7 @@ class Project
     private $website;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $expiredOn;
 
