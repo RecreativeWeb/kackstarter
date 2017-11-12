@@ -11,7 +11,7 @@
 <ul>
 	{% for e in projects %}
 	<li>
-		<strong>{{ e.name }} </strong>for <em>{{ e.description }}</em>: $ {{ e.TargetAmount }}
+		<strong>{{ e.name }} </strong>for <em>{{ e.description }}</em>: {{ e.TargetAmount | localizedcurrency('USD') }}
 	</li>
 	{% endfor %}
 </ul>
